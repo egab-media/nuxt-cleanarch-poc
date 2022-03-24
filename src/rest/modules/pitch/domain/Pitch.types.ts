@@ -1,6 +1,6 @@
 import { Result } from 'neverthrow'
-import { HttpError } from '@@/src/shared/http/HttpError'
-import { ParseError } from '@@/src/shared/parseError'
+import { HttpError } from '@@/src/rest/presentation/http/HttpError'
+import { ParseError } from '@@/src/rest/presentation/parseError'
 
 export type PitchState = 'REVIEW' | 'CHANGE' | 'APPROVED'
 

@@ -2,9 +2,9 @@ import { inject } from 'inversify-props'
 import { err, ok, Result } from 'neverthrow'
 import { IPitchData, IPitchRepository } from '../../domain/Pitch.types'
 import { mockPitchData } from '../../domain/__tests__/Pitch.mock'
-import { ParseError } from '@@/src/shared/parseError'
-import { TestActions } from '@@/src/shared/http/HttpService.mock'
-import { HttpError } from '@@/src/shared/http/HttpError'
+import { ParseError } from '@@/src/rest/presentation/parseError'
+import { TestActions } from '@@/src/rest/presentation/http/HttpService.mock'
+import { HttpError } from '@@/src/rest/presentation/http/HttpError'
 
 export class MockPitchService implements IPitchRepository {
   actionType: TestActions

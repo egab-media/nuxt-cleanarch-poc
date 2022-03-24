@@ -2,7 +2,7 @@ import axios, { AxiosInstance } from 'axios'
 import MockAdapter from 'axios-mock-adapter'
 import { inject } from 'inversify-props'
 import { IAxiosCreator } from './HttpService'
-import { HttpPitch, IPitchResponse } from '@@/src/modules/pitch/infrastructure/PitchService.types'
+import { HttpPitch, IPitchResponse } from '@@/src/rest/modules/pitch/infrastructure/PitchService.types'
 
 const nextYear = new Date().setFullYear(new Date().getFullYear() + 1)
 

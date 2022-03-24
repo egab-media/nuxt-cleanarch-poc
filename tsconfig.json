@@ -18,8 +18,8 @@
     "paths": {
       "@@/*": ["./*"],
       "~~/*": ["./*"],
-      "@modules/*": ["./src/modules/*"],
-      "@shared/*": ["./src/shared/*"],
+      "@modules/*": ["./src/rest/modules/*"],
+      "@shared/*": ["src/rest/presentation/*"],
       "@ui/*": ["./src/ui/*"]
     },
     "types": [

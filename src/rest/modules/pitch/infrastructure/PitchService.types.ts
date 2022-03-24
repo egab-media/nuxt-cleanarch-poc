@@ -1,6 +1,6 @@
 import { Result } from 'neverthrow'
 import { IPitch, IPitchData } from '../domain/Pitch.types'
-import { ParseError } from '@@/src/shared/parseError'
+import { ParseError } from '@@/src/rest/presentation/parseError'
 
 export type HttpPitch = {
   title: string

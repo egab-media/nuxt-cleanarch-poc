@@ -3,9 +3,9 @@ import { combine, Result } from 'neverthrow'
 import { IPitchData, IPitchRepository } from '../domain/Pitch.types'
 import { PitchParser } from './PitchParser'
 import { IPitchParser, IPitchResponse } from './PitchService.types'
-import { IHttpService } from '@@/src/shared/http/HttpService'
-import { HttpError } from '@@/src/shared/http/HttpError'
-import { ParseError } from '@@/src/shared/parseError'
+import { IHttpService } from '@@/src/rest/presentation/http/HttpService'
+import { HttpError } from '@@/src/rest/presentation/http/HttpError'
+import { ParseError } from '@@/src/rest/presentation/parseError'
 
 export class PitchService implements IPitchRepository {
   private parser: IPitchParser

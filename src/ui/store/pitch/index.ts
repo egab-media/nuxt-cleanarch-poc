@@ -3,8 +3,8 @@ import 'reflect-metadata'
 
 import { GetterTree, MutationTree, ActionTree } from 'vuex'
 import { container } from 'inversify-props'
-import { Pitch } from '@@/src/modules/pitch/domain/Pitch'
-import { GetRecent } from '@@/src/modules/pitch/usecase/getRecent'
+import { Pitch } from '@@/src/rest/modules/pitch/domain/Pitch'
+import { GetRecent } from '@@/src/rest/modules/pitch/usecase/getRecent'
 
 export const state = () => ({
   loading: false,

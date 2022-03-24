@@ -6,9 +6,9 @@ import { IPitchRepository } from '../../domain/Pitch.types'
 import { mockPitchData } from '../../domain/__tests__/Pitch.mock'
 import { MockPitchService } from '../../infrastructure/__tests__/PitchService.mock'
 import { containerBuilder } from '@@/src/ui/plugins/inversify'
-import { TestActions } from '@@/src/shared/http/HttpService.mock'
-import { HttpError } from '@@/src/shared/http/HttpError'
-import { ParseError } from '@@/src/shared/parseError'
+import { TestActions } from '@@/src/rest/presentation/http/HttpService.mock'
+import { HttpError } from '@@/src/rest/presentation/http/HttpError'
+import { ParseError } from '@@/src/rest/presentation/parseError'
 
 beforeEach(() => {
   resetContainer()

@@ -16,7 +16,7 @@
 
 <script lang="ts">
 import Vue, { PropOptions } from 'vue'
-import { Pitch } from '@@/src/modules/pitch/domain/Pitch'
+import { Pitch } from '@@/src/rest/modules/pitch/domain/Pitch'
 
 export default Vue.extend({
   name: 'ArticleList',

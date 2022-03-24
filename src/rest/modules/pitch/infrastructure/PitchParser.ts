@@ -2,7 +2,7 @@ import { err, ok, Result } from 'neverthrow'
 import { Pitch } from '../domain/Pitch'
 import { IPitch, IPitchData, PitchState } from '../domain/Pitch.types'
 import { HttpPitch, IPitchParser } from './PitchService.types'
-import { ParseError } from '@@/src/shared/parseError'
+import { ParseError } from '@@/src/rest/presentation/parseError'
 
 export class PitchParser implements IPitchParser {
   toDomain(data: HttpPitch): Result<IPitch, ParseError> {

@@ -1,7 +1,7 @@
 import { inject } from 'inversify-props'
 import { IPitchData, IPitchRepository } from '../domain/Pitch.types'
-import { HttpError, isHttpError } from '@@/src/shared/http/HttpError'
-import { ParseError } from '@@/src/shared/parseError'
+import { HttpError, isHttpError } from '@@/src/rest/presentation/http/HttpError'
+import { ParseError } from '@@/src/rest/presentation/parseError'
 
 export type Callbacks = {
   onSuccess(data: IPitchData[]): void

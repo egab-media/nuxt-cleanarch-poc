@@ -2,8 +2,8 @@ import 'reflect-metadata'
 import { cid, container, resetContainer, mockTransient } from 'inversify-props'
 import { PitchService } from '../PitchService'
 import { containerBuilder } from '@@/src/ui/plugins/inversify'
-import { IAxiosCreator, IHttpService } from '@@/src/shared/http/HttpService'
-import { MockAxiosCreator, TestActions } from '@@/src/shared/http/HttpService.mock'
+import { IAxiosCreator, IHttpService } from '@@/src/rest/presentation/http/HttpService'
+import { MockAxiosCreator, TestActions } from '@@/src/rest/presentation/http/HttpService.mock'
 
 beforeEach(() => {
   resetContainer()
