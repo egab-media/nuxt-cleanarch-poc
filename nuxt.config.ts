@@ -56,8 +56,37 @@ const config: NuxtConfig = {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/firebase'
   ],
+
+  firebase: {
+    config: {
+      apiKey: process.env.API_KEY,
+      authDomain: process.env.AUTH_DOMAIN,
+      projectId: process.env.PROJECT_ID,
+      storageBucket: process.env.STORAGE_BUCKET,
+      messagingSenderId: process.env.MESSAGING_SENDER_ID,
+      appId: process.env.APP_ID,
+      measurementId: process.env.MEASUREMENT_ID
+    },
+    services: {
+      auth: {
+        emulatorPort: 9099,
+        emulatorHost: 'http://localhost'
+      },
+      firestore: {
+        emulatorPort: 8080,
+        emulatorHost: 'localhost'
+      },
+      storage: true,
+      functions: {
+        location: 'us-central1',
+        emulatorPort: 12345,
+        emulatorHost: 'http://10.10.10.3'
+      }
+    }
+  },
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
