@@ -1,5 +1,6 @@
-import Ajv from 'ajv';
-import { IJsvExternalInterface } from '../../common/validator/IJsvExternalInterface';
+/* eslint-disable max-len */
+import Ajv from "ajv";
+import { IJsvExternalInterface } from "../../common/validator/IJsvExternalInterface";
 
 // eslint-disable-next-line require-jsdoc
 export class AjvValidator implements IJsvExternalInterface {
@@ -20,10 +21,11 @@ export class AjvValidator implements IJsvExternalInterface {
    */
   public async validate(schemaValidator: object, toValidateObject: any): Promise<string | null> {
     const validate = this.ajv.compile(schemaValidator);
-    console.log('FROM VALIDATOR => ', validate(toValidateObject));
+    console.log("FROM VALIDATOR => ", validate(toValidateObject));
     if (!validate(toValidateObject)) {
       return this.ajv.errorsText(validate.errors);
+    } else {
+      return null;
     }
-    return null;
   }
 }

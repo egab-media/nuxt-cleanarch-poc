@@ -7,7 +7,8 @@
     "shell": "npm run build && firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
-    "logs": "firebase functions:log"
+    "logs": "firebase functions:log",
+    "test": "jest"
   },
   "engines": {
     "node": "16"
@@ -15,6 +16,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "@firebase/rules-unit-testing": "^2.0.2",
+    "ajv": "^8.11.0",
     "firebase-admin": "^10.0.2",
     "firebase-functions": "^3.19.0",
     "jest": "^27.5.1"

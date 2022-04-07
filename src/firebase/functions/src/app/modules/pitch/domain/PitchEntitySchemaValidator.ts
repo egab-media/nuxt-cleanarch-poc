@@ -1,45 +1,48 @@
+// import { JSONSchemaType } from "ajv";
+// import { PitchEntity } from "./PitchEntity";
+
 export const PitchEntitySchemaValidator = {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "definitions": {
     "DummyCollectionNames": {
-      "type": "object"
+      "type": "object",
     },
-    "Pitch": {
+    "PitchEntity": {
       "properties": {
         "description": {
-          "type": "string"
+          "type": "string",
         },
         "due": {
           "format": "date-time",
-          "type": "string"
+          "type": "string",
         },
         "schedule": {
           "format": "date-time",
-          "type": "string"
+          "type": "string",
         },
         "state": {
-          "$ref": "#/definitions/PitchState"
+          "$ref": "#/definitions/PitchState",
         },
         "title": {
-          "type": "string"
-        }
+          "type": "string",
+        },
       },
       "required": [
         "description",
         "due",
         "schedule",
         "state",
-        "title"
+        "title",
       ],
-      "type": "object"
+      "type": "object",
     },
     "PitchState": {
       "enum": [
         "APPROVED",
         "CHANGE",
-        "REVIEW"
+        "REVIEW",
       ],
-      "type": "string"
-    }
-  }
-}
+      "type": "string",
+    },
+  },
+};

@@ -1,8 +1,9 @@
+/* eslint-disable max-len */
 import { PitchEntity } from "../domain/PitchEntity";
 
 export interface IPitchInputPort {
-  saveData(id: string, data: PitchEntity): Promise<boolean>
-  copyData(id: string, data: PitchEntity): Promise<boolean>
+  saveData(id: string, data: PitchEntity): Promise<void | boolean>
+  copyData(id: string, data: PitchEntity): Promise<void | boolean>
 }
 
 export interface IPitchOutputPort {

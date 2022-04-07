@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { PitchEntity } from "../domain/PitchEntity";
 import { IPitchInputPort, IPitchOutputPort } from "./PitchContract";
 
@@ -15,21 +16,29 @@ export class PitchInteractor implements IPitchInputPort {
    *
    * @param {string} id
    * @param {PitchEntity} data
-   * @return {Promise<boolean>}
+   * @return {Promise<void | boolean>}
    */
-  public async saveData(id: string, data: PitchEntity): Promise<boolean> {
-    await this.gateway.saveDataInFirstPersistence(id, data);
-    return true;
+  public async saveData(id: string, data: PitchEntity): Promise<void | boolean> {
+    try {
+      const result = await this.gateway.saveDataInFirstPersistence(id, data);
+      return result;
+    } catch (error: any) {
+      return error;
+    }
   }
 
   /**
    *
    * @param {string} id
    * @param {PitchEntity} data
-   * @return {Promise<boolean>}
+   * @return {Promise<void | boolean>}
    */
-  public async copyData(id: string, data: PitchEntity): Promise<boolean> {
-    await this.gateway.saveDataInSecondPersistence(id, data);
-    return true;
+  public async copyData(id: string, data: PitchEntity): Promise<void | boolean> {
+    try {
+      const result = await this.gateway.saveDataInSecondPersistence(id, data);
+      return result;
+    } catch (error: any) {
+      return error;
+    }
   }
 }

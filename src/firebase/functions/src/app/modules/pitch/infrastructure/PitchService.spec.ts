@@ -65,6 +65,22 @@ describe("Pitch Basic test", () => {
     expect(doc.data()).toEqual(data);
   });
 
+  xtest("should edit callable pitch Entity", async () => {
+    const wrappedCallable = testEnv.wrap(editPitchEntity);
+
+    // Exec
+    const docIndex = await wrappedCallable(data);
+    const doc = await admin.firestore()
+      .doc(DummyCollectionNames.DUMMY_1 + "/" + docIndex)
+      .get();
+
+    const valid = new AjvValidator();
+    expect(doc.data()).toStrictEqual(data);
+
+    const checkValidation = await valid.validate(PitchEntitySchemaValidator, doc.data());
+    expect(checkValidation).toEqual(null);
+  });
+
   afterEach((done) => {
     done();
   });
