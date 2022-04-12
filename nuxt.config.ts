@@ -62,19 +62,19 @@ const config: NuxtConfig = {
 
   firebase: {
     config: {
-      apiKey: process.env.API_KEY,
-      authDomain: process.env.AUTH_DOMAIN,
-      projectId: process.env.PROJECT_ID,
-      storageBucket: process.env.STORAGE_BUCKET,
-      messagingSenderId: process.env.MESSAGING_SENDER_ID,
-      appId: process.env.APP_ID,
-      measurementId: process.env.MEASUREMENT_ID
+      apiKey: 'AIzaSyDUEgxgg2y9mNfT_ODMN1kg-NTIG9Be5RE',
+      authDomain: 'egab-backend-test.firebaseapp.com',
+      projectId: 'egab-backend-test',
+      storageBucket: 'egab-backend-test.appspot.com',
+      messagingSenderId: '473826778958',
+      appId: '1:473826778958:web:5c5bd4167954d69ed0c81f',
+      measurementId: 'G-QWVH7HXLMS'
     },
     services: {
-      auth: {
-        emulatorPort: 9099,
-        emulatorHost: 'http://localhost'
-      },
+      // auth: {
+      //   emulatorPort: 9099,
+      //   emulatorHost: 'http://localhost'
+      // },
       firestore: {
         emulatorPort: 8080,
         emulatorHost: 'localhost'

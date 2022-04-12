@@ -27,7 +27,8 @@
       "@nuxtjs/axios",
       "@types/node",
       "@types/jest",
-      "reflect-metadata"
+      "reflect-metadata",
+      "@nuxtjs/firebase"
     ]
   },
   "exclude": [

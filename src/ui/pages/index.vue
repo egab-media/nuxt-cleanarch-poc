@@ -1,10 +1,17 @@
 <template>
   <v-row justify="center" align="center">
-    <v-col cols="12">
+    <v-col cols="6">
       <h3 class="text-h3">
         Pitches
       </h3>
     </v-col>
+
+    <v-col cols="6">
+      <v-btn @click="addPitch">
+        Add pitch
+      </v-btn>
+    </v-col>
+
     <v-col v-if="error">
       <v-alert type="error">
         {{ error }}
@@ -22,9 +29,10 @@
   </v-row>
 </template>
 
-<script>
+<script lang="ts">
 import { mapState } from 'vuex'
 import ArticleList from '../components/ArticleList.vue'
+import { PitchEntity } from '@@/src/firebase/functions/src/app/modules/pitch/domain/PitchEntity'
 
 export default {
   name: 'IndexPage',
@@ -34,6 +42,17 @@ export default {
   },
   async mounted () {
     await this.$store.dispatch('pitch/getRecentPitches')
+  },
+  methods: {
+    addPitch () {
+      this.$store.dispatch('pitchfirebase/createPitch', {
+        title: 'Test Title',
+        description: 'Test Description',
+        state: 'APPROVED',
+        schedule: null,
+        due: null
+      } as PitchEntity)
+    }
   }
 }
 </script>
